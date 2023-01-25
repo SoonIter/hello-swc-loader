@@ -1,7 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -31,18 +30,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HTMLWebpackPlugin({
-      templateContent: `
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <meta charset="utf-8">
-  <title>Webpack App</title>
-  </head>
-    <body>
-       <div id="app" />
-    </body>
-    </html>
-  `,
+      title: 'Hello SWC',
+      template: './index.html',
     }),
     new ProgressBarPlugin(),
   ],
